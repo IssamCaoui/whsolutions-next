@@ -1,6 +1,31 @@
 ﻿// src/components/ui/CategoryCard.tsx
 import Link from "next/link";
 import { Category } from "@/types";
+import {
+  SprayCan, Box, Waves, Droplets, Brush, Package, Trash2,
+  Scroll, Bug, Sparkles, Wind, FlaskConical, ShieldCheck,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+/* Map Font Awesome class names → Lucide React icons */
+const FA_ICON_MAP: Record<string, LucideIcon> = {
+  "fas fa-spray-can":    SprayCan,
+  "fas fa-box":          Box,
+  "fas fa-water":        Waves,
+  "fas fa-hands-wash":   Droplets,
+  "fas fa-broom":        Brush,
+  "fas fa-box-open":     Package,
+  "fas fa-trash-alt":    Trash2,
+  "fas fa-toilet-paper": Scroll,
+  "fas fa-bug":          Bug,
+};
+
+function CategoryIcon({ icon }: { icon: string | null }) {
+  if (!icon) return null;
+  const Icon = FA_ICON_MAP[icon];
+  if (Icon) return <Icon size={22} className="text-white drop-shadow" />;
+  return <Sparkles size={22} className="text-white" />;
+}
 
 const COLOR_PALETTE = [
   "from-[#00E5B0] to-[#091220]",
@@ -28,10 +53,10 @@ export default function CategoryCard({ category, index = 0 }: Props) {
       <div className={`h-2 bg-gradient-to-r ${gradient}`} />
 
       <div className="p-5">
-        {/* Icon or initial */}
+        {/* Icon */}
         <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
           {category.icon ? (
-            <span className="text-xl">{category.icon}</span>
+            <CategoryIcon icon={category.icon} />
           ) : (
             <span className="text-white font-black text-lg">
               {category.name.charAt(0).toUpperCase()}
