@@ -1,4 +1,4 @@
-// src/components/ui/ProductCard.tsx
+﻿// src/components/ui/ProductCard.tsx
 import Link from "next/link";
 import Image from "next/image";
 import { Product } from "@/types";
@@ -15,7 +15,7 @@ export default function ProductCard({ product }: Props) {
   const imgSrc = getProductImageUrl(product.id);
 
   return (
-    <div className="product-card-hover group bg-white dark:bg-[#0D1B2A] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-white/5 flex flex-col">
+    <div className="group bg-[#0D1A30] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-white/[0.06] hover:border-[#00E5B0]/20 flex flex-col">
       {/* Image */}
       <Link href={`/products/${product.slug}`} className="block relative overflow-hidden" style={{ paddingBottom: "70%" }}>
         <Image
@@ -36,28 +36,28 @@ export default function ProductCard({ product }: Props) {
       {/* Body */}
       <div className="p-4 flex flex-col flex-1">
         {product.category_name && (
-          <span className="text-[11px] font-semibold text-[#4ECDC4] uppercase tracking-widest mb-1">
+          <span className="text-[11px] font-semibold text-[#00E5B0] uppercase tracking-widest mb-1">
             {product.category_name}
           </span>
         )}
         <Link href={`/products/${product.slug}`}>
-          <h3 className="font-semibold text-gray-900 dark:text-white text-sm leading-snug mb-2 line-clamp-2 hover:text-[#4ECDC4] transition-colors">
+          <h3 className="font-semibold text-[#EDF2FF] text-sm leading-snug mb-2 line-clamp-2 hover:text-[#00E5B0] transition-colors">
             {product.name}
           </h3>
         </Link>
         {product.short_description && (
-          <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mb-3 flex-1">
+          <p className="text-xs text-[#6B83A0] line-clamp-2 mb-3 flex-1">
             {product.short_description}
           </p>
         )}
         {product.reference && (
-          <p className="text-[10px] text-gray-400 mb-3">Réf : {product.reference}</p>
+          <p className="text-[10px] text-[#6B83A0] mb-3">Réf : {product.reference}</p>
         )}
 
         <div className="flex gap-2 mt-auto">
           <Link
             href={`/products/${product.slug}`}
-            className="flex-1 text-center py-2 rounded-lg border border-[#4ECDC4] text-[#4ECDC4] text-xs font-semibold hover:bg-[#4ECDC4] hover:text-white transition-all duration-200"
+            className="flex-1 text-center py-2 rounded-lg border border-[#00E5B0] text-[#00E5B0] text-xs font-semibold hover:bg-[#00E5B0] hover:text-white transition-all duration-200"
           >
             Voir détails
           </Link>

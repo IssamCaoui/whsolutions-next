@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 // src/app/catalogue/page.tsx
 import { useEffect, useState } from "react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -29,39 +29,39 @@ export default function CataloguePage() {
   const isGoogleDrive = pdfUrl?.includes("drive.google.com");
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-[#0D1B2A]">
+    <div className="min-h-screen pt-24 pb-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <AnimatedSection className="text-center mb-12">
           <span className="section-tag">Catalogue Produits</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white mt-4 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-black text-[#EDF2FF] mt-4 mb-4">
             Notre <span className="gradient-text">catalogue 2024</span>
           </h1>
-          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-lg">
+          <p className="text-[#6B83A0] max-w-xl mx-auto text-lg">
             Téléchargez notre catalogue complet avec fiches techniques, références et gamme complète de produits d'hygiène professionnelle.
           </p>
         </AnimatedSection>
 
         {loading ? (
           <div className="flex items-center justify-center py-20">
-            <Loader2 className="w-10 h-10 text-[#4ECDC4] animate-spin" />
+            <Loader2 className="w-10 h-10 text-[#00E5B0] animate-spin" />
           </div>
         ) : (
           <>
             {/* CTA card */}
             <AnimatedSection delay={0.1}>
-              <div className="relative overflow-hidden bg-gradient-to-br from-[#1B3A5C] to-[#0D1B2A] rounded-3xl p-12 text-center mb-12">
-                <div className="blob w-64 h-64 bg-[#4ECDC4] opacity-20 -top-10 -left-10 animate-[morphBlob_10s_ease-in-out_infinite]" />
+              <div className="relative overflow-hidden bg-gradient-to-br from-[#0D1A30] to-[#091220] rounded-3xl p-12 text-center mb-12">
+                <div className="blob w-64 h-64 bg-[#00E5B0] opacity-20 -top-10 -left-10 animate-[morphBlob_10s_ease-in-out_infinite]" />
                 <div className="blob w-48 h-48 bg-[#FF6B6B] opacity-10 -bottom-5 -right-5 animate-[morphBlob_14s_ease-in-out_infinite_3s]" />
 
                 <div className="relative z-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#4ECDC4] to-[#1B3A5C] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#00E5B0] to-[#091220] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
                     <FileText className="w-10 h-10 text-white" />
                   </div>
 
                   <h2 className="text-2xl font-black text-white mb-4">
                     Catalogue WH Solutions
                   </h2>
-                  <p className="text-gray-400 mb-8 max-w-md mx-auto">
+                  <p className="text-[#6B83A0] mb-8 max-w-md mx-auto">
                     Toute notre gamme de produits : nettoyage, désinfection, traitement des eaux, hygiène sanitaire et cuisine collective.
                   </p>
 
@@ -71,7 +71,7 @@ export default function CataloguePage() {
                         href={pdfUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#4ECDC4] to-[#1B3A5C] text-white font-bold hover:shadow-2xl hover:shadow-[#4ECDC4]/30 hover:scale-105 transition-all duration-300"
+                        className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r btn-primary transition-all duration-300"
                       >
                         {isGoogleDrive ? <ExternalLink size={20} /> : <Download size={20} />}
                         {isGoogleDrive ? "Voir sur Google Drive" : "Télécharger le PDF"}
@@ -98,10 +98,10 @@ export default function CataloguePage() {
                   { icon: "✅", title: "Normes HACCP", desc: "Tous les produits certifiés et conformes" },
                   { icon: "📞", title: "Devis gratuit", desc: "Contactez-nous pour un devis personnalisé" },
                 ].map((item, i) => (
-                  <div key={i} className="bg-gray-50 dark:bg-white/5 rounded-2xl p-6 text-center border border-gray-100 dark:border-white/5">
+                  <div key={i} className="bg-[#0D1A30] rounded-2xl p-6 text-center border border-white/[0.06]">
                     <div className="text-4xl mb-3">{item.icon}</div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{item.desc}</p>
+                    <h3 className="font-bold text-[#EDF2FF] mb-1">{item.title}</h3>
+                    <p className="text-sm text-[#6B83A0]">{item.desc}</p>
                   </div>
                 ))}
               </div>

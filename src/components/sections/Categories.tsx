@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 // src/components/sections/Categories.tsx
 import { useEffect, useState } from "react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -18,15 +18,15 @@ export default function Categories() {
   }, []);
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0D1B2A]">
+    <section className="py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <AnimatedSection className="text-center mb-14">
           <span className="section-tag">Nos Gammes</span>
-          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white mt-4 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#EDF2FF] mt-4 mb-4">
             Explorez nos{" "}
             <span className="gradient-text">catégories</span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+          <p className="text-[#6B83A0] max-w-xl mx-auto">
             Une gamme complète de produits pour chaque secteur d'activité.
           </p>
         </AnimatedSection>
@@ -34,11 +34,11 @@ export default function Categories() {
         {loading ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="h-40 rounded-2xl bg-gray-100 dark:bg-white/5 animate-pulse" />
+              <div key={i} className="h-40 rounded-2xl bg-[#0D1A30] animate-pulse" />
             ))}
           </div>
         ) : categories.length === 0 ? (
-          <p className="text-center text-gray-400">Aucune catégorie disponible.</p>
+          <p className="text-center text-[#6B83A0]">Aucune catégorie disponible.</p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {categories.map((cat, i) => (
@@ -52,7 +52,7 @@ export default function Categories() {
         <AnimatedSection className="text-center mt-12" delay={0.2}>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border-2 border-[#4ECDC4] text-[#4ECDC4] font-bold hover:bg-[#4ECDC4] hover:text-white hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border-2 border-[#00E5B0] text-[#00E5B0] font-bold hover:bg-[#00E5B0] hover:text-white hover:scale-105 transition-all duration-300"
           >
             Voir tous les produits →
           </Link>
