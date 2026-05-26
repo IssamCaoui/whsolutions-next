@@ -16,8 +16,10 @@ const pool = mysql.createPool({
 
 export default pool;
 
-// Convenience query helper
+// Convenience query helper — uses pool.query (text protocol) instead of
+// pool.execute (binary prepared statements) to avoid LIMIT/OFFSET param
+// issues on Railway MySQL.
 export async function query<T = unknown>(sql: string, params?: unknown[]): Promise<T[]> {
-  const [rows] = await pool.execute(sql, params);
+  const [rows] = await pool.query(sql, params);
   return rows as T[];
 }
