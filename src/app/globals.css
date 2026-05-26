@@ -165,3 +165,33 @@ body {
   background: rgba(37,211,102,0.3);
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* ─── Admin form helpers ─────────────────────────────────────── */
+.label-admin {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.input-admin {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-admin:focus {
+  border-color: rgba(78,205,196,0.5);
+  box-shadow: 0 0 0 2px rgba(78,205,196,0.15);
+}
+.input-admin::placeholder { color: #6B7280; }
+.input-admin option { background: #0D1B2A; color: #fff; }
+
