@@ -2,6 +2,7 @@
 // src/components/layout/Navbar.tsx
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
@@ -40,8 +41,14 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between" style={{ height: 72 }}>
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4ECDC4] to-[#1B3A5C] flex items-center justify-content-center shadow-lg group-hover:scale-110 transition-transform duration-300" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span className="text-white font-black text-sm">WH</span>
+          <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
+            <Image
+              src="/images/logo.png"
+              alt="WH Solutions"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <div className="hidden sm:block">
             <span className="font-black text-lg text-[#1B3A5C] dark:text-white">

@@ -1,7 +1,7 @@
 "use client";
 // src/components/sections/Hero.tsx
-import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, ChevronDown } from "lucide-react";
 
@@ -15,6 +15,14 @@ const stats = [
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0D1B2A] via-[#1B3A5C] to-[#0D1B2A]">
+      {/* Hero background image */}
+      <Image
+        src="/images/hero-bg.png"
+        alt=""
+        fill
+        className="object-cover opacity-20"
+        priority
+      />
       {/* Animated blobs */}
       <div className="blob w-96 h-96 bg-[#4ECDC4] opacity-20 top-10 -left-20 animate-[morphBlob_10s_ease-in-out_infinite]" />
       <div className="blob w-80 h-80 bg-[#FF6B6B] opacity-15 bottom-20 right-10 animate-[morphBlob_14s_ease-in-out_infinite_2s]" />

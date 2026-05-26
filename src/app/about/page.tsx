@@ -1,5 +1,6 @@
 // src/app/about/page.tsx
 import type { Metadata } from "next";
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Link from "next/link";
 
@@ -49,6 +50,23 @@ export default function AboutPage() {
               <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">{s.label}</div>
             </div>
           ))}
+        </AnimatedSection>
+
+        {/* Image section */}
+        <AnimatedSection delay={0.15} className="mb-20">
+          <div className="relative w-full h-72 sm:h-96 rounded-3xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/about-washing.jpg"
+              alt="WH Solutions - Hygiène professionnelle"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/60 to-transparent" />
+            <div className="absolute bottom-8 left-8">
+              <p className="text-white text-2xl font-black">L'hygiène, notre passion</p>
+              <p className="text-[#4ECDC4] text-sm font-semibold mt-1">Plus de 12 ans d'expertise au Maroc</p>
+            </div>
+          </div>
         </AnimatedSection>
 
         {/* Values */}
