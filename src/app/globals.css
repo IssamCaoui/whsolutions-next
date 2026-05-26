@@ -30,14 +30,17 @@
 }
 
 /* ── Base ────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body {
-  font-family: var(--font-sans);
-  background: #050A18;
-  color: #EDF2FF;
-  line-height: 1.7;
-  overflow-x: hidden;
+/* IMPORTANT: wrap in @layer base so Tailwind utilities (@layer utilities) override this reset */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--font-sans);
+    background: #050A18;
+    color: #EDF2FF;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 }
 
 /* ── Scroll progress ─────────────────────────────────────────── */
