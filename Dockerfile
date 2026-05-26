@@ -35,8 +35,8 @@ RUN addgroup --system --gid 1001 nodejs \
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# public/ dir (may not exist — handle gracefully)
-COPY --from=builder --chown=nextjs:nodejs /app/public* ./public/
+# public/ dir
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
 USER nextjs
 
